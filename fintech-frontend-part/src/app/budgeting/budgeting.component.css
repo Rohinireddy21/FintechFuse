@@ -1,0 +1,44 @@
+body {
+  font-family: cursive;
+}
+td,tr {
+  font-family: cursive;
+  text-align: justify;
+}
+.tlayout {
+  border-collapse: collapse;
+  width: 50%;
+}
+.tlayout th, td {
+  text-align: justify;
+  padding: 8px;
+}
+.tlayout tr:nth-child(even){background-color: #f2f2f2}
+.tlayout th {
+  background-color: rgb(143, 143, 242);
+  color: white; 
+}
+.save-button {
+  background-color: royalblue; 
+  border: none;
+  color: white; 
+  padding: 4px 14px; 
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px; 
+}
+.save-button:hover {
+  background-color: cornflowerblue;
+}
+.remove-button {
+  background-color: red; 
+  border: none;
+  color: white; 
+  padding: 4px 14px; 
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.remove-button:hover {
+  background-color:rgba(235, 135, 135, 0.938);
+}

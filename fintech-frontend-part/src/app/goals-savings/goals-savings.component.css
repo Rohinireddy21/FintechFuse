@@ -1,0 +1,60 @@
+body {
+  font-family: cursive;
+}
+td,tr {
+  font-family: cursive;
+  text-align: justify;
+}
+.tlayout {
+  border-collapse: collapse;
+  width: 100%;
+}
+.tlayout th, td {
+  text-align: justify;
+  padding: 8px;
+}
+.tlayout tr:nth-child(even){background-color: #f2f2f2}
+.tlayout th {
+  background-color: rgb(143, 143, 242);
+  color: white; 
+}
+.add-button {
+  background-color: royalblue; 
+  border: none;
+  color: white; 
+  padding: 4px 14px; 
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px; 
+}
+.add-button:hover {
+  background-color: cornflowerblue;
+}
+.remove-button {
+  background-color: red; 
+  border: none;
+  color: white; 
+  padding: 4px 14px; 
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.remove-button:hover {
+  background-color:rgba(235, 135, 135, 0.938);
+}
+.goal-completed td {
+  text-decoration: line-through;
+}
+.mark-read-button {
+  background-color:orange; 
+  border: none;
+  color: white; 
+  padding: 4px 14px; 
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.mark-read-button:hover {
+  background-color:rgb(244, 193, 98);
+}

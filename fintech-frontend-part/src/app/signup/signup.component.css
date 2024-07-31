@@ -1,0 +1,49 @@
+h3
+{
+    color:black;
+    font-weight: 500;
+    font-family:cursive;
+}
+td,tr {
+    font-family: cursive;
+}
+.signin-button {
+    background-color: royalblue; 
+    border: none;
+    color: white; 
+    padding: 4px 14px; 
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px; 
+}
+.signin-button:hover {
+    background-color: cornflowerblue;
+}
+.alert-message {
+    color:red;
+}
+
+.password-rules {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .password-rules li {
+    color: red; /* You can customize the color as needed */
+    margin-bottom: 5px;
+  }
+  
+  .password-rules li.complete {
+    display: none; /* Hide rules that have been satisfied */
+  }
+  
+  .password-rules li:before {
+    content: '• '; /* Add bullet point before each rule */
+  }
+  .password-rules-container {
+    position: absolute;
+    top: 92%; /* Adjust as needed */
+    right: 490px; /* Adjust as needed */
+    
+}
+  

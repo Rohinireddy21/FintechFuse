@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<h3>Goals/Savings</h3>
+<br/>
+<p>Welcome to the Goals/Savings section. 
+  Here, you can set financial goals (e.g., saving for a vacation, buying a car) and track their progress.
+  This section may include tools to help you to calculate how much you need to save and how long it will 
+  take to reach their goals.
+</p>
+<hr/>
+<form (ngSubmit)="addGoal()">
+  <table>
+      <tr>
+        <td><label for="name">Name: </label></td>
+        <td><input type="text" id="name" name="name" [(ngModel)]="name" [(ngModel)]="newGoal.name" required></td>
+      </tr>
+      <tr>
+        <td><label for="targetAmount">Target Amount: </label></td>
+        <td><input type="number" id="targetAmount" name="targetAmount" [(ngModel)]="targetAmount" [(ngModel)]="newGoal.targetAmount" required></td>
+      </tr>
+      <tr>
+        <td><label for="currentAmount">Current Amount: </label></td>
+        <td><input type="number" id="currentAmount" name="currentAmount" [(ngModel)]="currentAmount" [(ngModel)]="newGoal.currentAmount" required></td>
+      </tr>
+      <tr>
+        <td><label for="date">Deadline: </label></td>
+        <td><input type="date" id="date" name="date" [(ngModel)]="deadline" [(ngModel)]="newGoal.deadline" required></td>
+      </tr>
+      <tr>
+          <td><button class="add-button" type="add">Add</button></td>
+      </tr>
+  </table>
+</form>
+<hr/>
+
+<br/>
+<table class="tlayout">
+  <tr>
+      <th>Name</th>
+      <th>TargetAmount</th>
+      <th>CurrentAmount</th>
+      <th>Deadline</th>
+      <th>Variation</th>
+      <th colspan="2">Action</th>
+  </tr>
+  <tr *ngFor="let goal of goal; let i = index" [ngClass]="{'goal-completed': goal.completed}">
+      <td [ngStyle]="{'text-decoration': goal.completed ? 'line-through' : 'none'}">{{goal.name}}</td> 
+      <td [ngStyle]="{'text-decoration': goal.completed ? 'line-through' : 'none'}">{{goal.targetAmount}}</td>
+      <td [ngStyle]="{'text-decoration': goal.completed ? 'line-through' : 'none'}">{{goal.currentAmount}}</td>
+      <td [ngStyle]="{'text-decoration': goal.completed ? 'line-through' : 'none'}">{{goal.deadline}}</td>
+      <td [ngStyle]="{'text-decoration': goal.completed ? 'line-through' : 'none'}">{{goal.targetAmount - goal.currentAmount}}</td>
+      <td>
+        <button class="mark-read-button" (click)="markAsRead(i)">Mark as Read</button>
+        <button class="remove-button" (click)="removeGoal(i)">Remove</button>
+      </td>
+  </tr>
+</table>
+<br/>
+</body>
+</html>
+

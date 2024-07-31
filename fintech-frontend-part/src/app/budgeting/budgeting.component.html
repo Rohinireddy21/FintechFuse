@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<h3>Budget</h3>
+<br/>
+<p>Welcome to the Budget section. 
+  Here, you can set budgets for different categories (e.g., groceries, entertainment, bills)
+  and track your spending against these budgets. This section allows you to adjust budgets 
+  as needed. Budget section offers a comprehensive solution for managing your finances effectively.
+  By providing tools for budget setting, expense tracking, and budget adjustment, along with the 
+  flexibility to modify your spending categories, it empowers you to take control of your financial 
+  well-being and achieve your financial goals.</p>
+<hr/>
+<form (ngSubmit)="addCategories()">
+    <table>
+        <tr>
+            <td><label for="category">Category: </label></td>
+            <td><input type="text" id="category" name="category" [(ngModel)]="name" [(ngModel)]="newBudgetCategory.name" required></td>
+        </tr>
+        <tr>
+            <td><label for="amount">Amount: </label></td>
+            <td><input type="number" id="amount" name="amount" [(ngModel)]="amount" [(ngModel)]="newBudgetCategory.amount" required></td>
+        </tr>
+        <tr>
+            <td><button class="save-button" type="add">Save</button></td>
+        </tr>
+    </table>
+</form>
+<hr/>
+
+<br/>
+<table class="tlayout">
+  <tr>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Action</th>
+  </tr>
+  <tr *ngFor="let budget of budget; let i = index">
+      <td>{{budget.name}}</td> 
+      <td>{{budget.amount}}</td>
+      <td><button class="remove-button" (click)="removeCategory(i)">Remove</button></td>
+  </tr>
+</table>
+<br/>
+</body>
+</html>

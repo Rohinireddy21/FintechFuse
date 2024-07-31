@@ -1,0 +1,49 @@
+h3
+{
+    color:black;
+    font-weight: 500;
+    font-family:cursive;
+}
+td,tr {
+    font-family: cursive;
+}
+.login-button {
+    background-color: royalblue; 
+    border: none;
+    color: white; 
+    padding: 4px 14px; 
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px; 
+}
+.login-button:hover {
+    background-color: cornflowerblue;
+}
+.cancel-button {
+    background-color:rgba(148, 156, 176, 0.831); 
+    border: none;
+    color: white; 
+    padding: 4px 14px; 
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.cancel-button:hover {
+    background-color:gray;
+}
+/*.error-message {
+    color: red; 
+    font-size: 14px; 
+    margin-top: 5px; 
+}*/
+.error-message {
+    font-family: cursive;
+    background-color: #f8d7da; /* Bootstrap's red background color */
+    color: rgb(198, 44, 44); /* Bootstrap's red text color */
+    padding: 10px; /* Add padding to the error message */
+    margin-top: 10px; /* Add some space between the message and the form */
+    border-radius: 4px; /* Add some border radius for rounded corners */
+}
+.message {
+    color: red;
+}

@@ -1,0 +1,67 @@
+body {
+    font-family: cursive;
+}
+.add-button {
+    background-color: royalblue; 
+    border: none;
+    color: white; 
+    padding: 4px 14px; 
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px; 
+}
+.add-button:hover {
+    background-color: cornflowerblue;
+}
+h3 {
+    font-weight: 540;
+}
+.profit {
+    color: blue;
+    
+}
+.loss {
+    color: red;
+}
+.error-message {
+    font-family: cursive;
+    background-color: #f8d7da; /* Bootstrap's red background color */
+    color: rgb(198, 44, 44); /* Bootstrap's red text color */
+    padding: 10px; /* Add padding to the error message */
+    margin-top: 10px; /* Add some space between the message and the form */
+    border-radius: 4px; /* Add some border radius for rounded corners */
+}
+
+.tlayout {
+    border-collapse: collapse;
+    width: 50%;
+}
+.tlayout th, td {
+    text-align: center;
+    padding: 8px;
+}
+.tlayout tr:nth-child(even){background-color: #f2f2f2}
+.tlayout th {
+    background-color: rgb(143, 143, 242);
+    color: white; 
+}
+.logout-button {
+    background-color: royalblue; 
+    border: none;
+    color: white; 
+    padding: 4px 14px; 
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px; 
+    
+}
+.logout-button:hover {
+    background-color: cornflowerblue;
+}
+#myChart {
+    width: 100%; /* Set width to 100% of its container */
+    height: 400px; /* Set a fixed height */
+    border: 1px solid #ccc; /* Add a border */
+    margin-top: 20px; /* Add some top margin */
+    /* Add any other styles as needed */
+  }

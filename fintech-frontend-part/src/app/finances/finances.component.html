@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<h3>Finances</h3>
+<p>Welcome to the Finances page. 
+  Here, you can manage your income and expenses effectively to maintain a balanced financial status. 
+  You can add your income and expenses, view all your incomes and expenses, and get insights into your 
+  financial situation. Use the forms below to add your income and expenses, and track your financial 
+  summary to stay on top of your finances.</p>
+<hr/>
+<h3>Add Income</h3>
+<form (ngSubmit)="submitIncomeForm()">
+  <table>
+    <tr>
+      <td><label for="incomeAmount">Amount:</label></td>
+      <td><input type="number" id="incomeAmount" name="incomeAmount" [(ngModel)]="incomeAmount" [(ngModel)]="newIncome.incomeAmount" required></td>
+    </tr>
+    <tr>
+      <td><label for="incomeDescription">Description:</label></td>
+      <td><input type="text" id="incomeDescription" name="incomeDescription" [(ngModel)]="incomeDescription" [(ngModel)]="newIncome.incomeDescription" required></td>
+    </tr>
+    <br/>
+    <tr>
+      <button class="add-button" type="submit">Add Income</button>
+    </tr>
+  </table>
+  <div *ngIf="IncomefieldsEmpty" class="error-message">
+    Please fill in all fields.
+  </div>
+</form>
+<hr/>
+<h3>Show All Incomes</h3>
+<table class="tlayout">
+  <tr>
+      <th>Amount</th>
+      <th>Description</th>
+  </tr>
+  <tr *ngFor="let inc of incomes">
+      <td>{{inc.incomeAmount}}</td> 
+      <td>{{inc.incomeDescription}}</td>
+  </tr>
+</table>
+<hr/>
+<h3>Add Expense</h3>
+<form (ngSubmit)="submitExpenseForm()">
+  <table>
+    <tr>
+      <td><label for="expenseAmount">Amount:</label></td>
+      <td><input type="number" id="expenseAmount" name="expenseAmount" [(ngModel)]="expenseAmount" [(ngModel)]="newExpense.expenseAmount" required></td>
+    </tr>
+    <tr>
+      <td><label for="expenseDescription">Description:</label></td>
+      <td><input type="text" id="expenseDescription" name="expenseDescription" [(ngModel)]="expenseDescription" [(ngModel)]="newExpense.expenseDescription" required></td>
+    </tr>
+    <br/>
+    <tr>
+      <button class="add-button" type="submit">Add Expense</button>
+    </tr>
+  </table>
+  <div *ngIf="ExpensefieldsEmpty" class="error-message">
+    Please fill in all fields.
+  </div>
+</form>
+<hr/>
+<h3>Show All Expenses</h3>
+<table class="tlayout">
+  <tr>
+      <th>Amount</th>
+      <th>Description</th>
+  </tr>
+  <tr *ngFor="let exp of expenses">
+      <td>{{exp.expenseAmount}}</td> 
+      <td>{{exp.expenseDescription}}</td>
+  </tr>
+</table>
+<hr/>
+<h3>Financial Summary</h3>
+<p>Total Income: {{ totalIncome }}</p>
+<p>Total Expenses: {{ totalExpenses }}</p>
+<p>Status: 
+  <span *ngIf="profitOrLoss > 0" class="profit">Profit</span>
+  <span *ngIf="profitOrLoss < 0" class="loss">Loss</span>
+<p>Variation: {{ profitOrLoss }} </p>
+<hr/>
+<h3>Insights</h3>
+<div *ngIf="insights" class="insights">
+  <p>{{ insights }}</p>
+</div>
+<hr/>
+
+<br/>
+<button class="logout-button" (click)="logout()">Logout</button>
+</body>
+<br/>
+</html>
+
+

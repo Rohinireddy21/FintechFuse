@@ -1,0 +1,18 @@
+.faq-section {
+    font-family: cursive;
+    text-align: justify;
+}
+.back-button {
+    background-color: royalblue; 
+    border: none;
+    color: white; 
+    padding: 4px 14px; 
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px; 
+    
+}
+.back-button:hover {
+    background-color: cornflowerblue;
+}
+  

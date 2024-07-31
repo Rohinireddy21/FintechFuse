@@ -1,0 +1,77 @@
+<h3>Sign Up</h3><br/>
+<form #SignUpForm = "ngForm" (ngSubmit)="submit(SignUpForm)">
+    <table>
+        <tr>
+            <td><label for="name">Name</label></td>
+            <td><input type="text" id="name" name="name" required ngModel #name="ngModel"/></td>
+            <td><div *ngIf="name.touched && name.invalid" class="alert-message">This field is mandatory</div></td>
+        </tr>
+        <tr>
+            <td><label for="mobile">Mobile No.</label></td>
+            <td><input type="tel" pattern="[0-9]{10}" id="mobile" name="mobile" required ngModel #mobile="ngModel"/></td>
+            <td><div *ngIf="mobile.touched && mobile.invalid" class="alert-message">10 digits are mandatory</div></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="email" pattern="^[a-zA-Z0-9]+@gmail\.com$" id="email" name="email" required ngModel #email="ngModel"/></td>
+            <td><div *ngIf="email.touched && email.invalid" class="alert-message">ex - abc@gmail.com</div></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input type="password" id="password" name="password" required ngModel #password="ngModel"/></td>
+            <td><div *ngIf="password.touched && password.invalid" class="alert-message">This field is mandatory</div></td>
+        </tr>
+        <tr>
+            <td><label for="occupation">Occupation</label></td>
+            <td><input type="text" id="occupation" name="occupation" required ngModel #occupation="ngModel"/></td>
+            <td><div *ngIf="occupation.touched && occupation.invalid" class="alert-message">This field is mandatory</div></td>
+        </tr>
+        <tr>
+            <td><label for="uid">UID Number</label></td>
+            <td><input type="text" id="uid" name="uid" required ngModel #uid="ngModel"/></td>
+            <td><div *ngIf="uid.touched && uid.invalid" class="alert-message">This field is mandatory</div></td>
+        </tr>
+        <tr>
+            <td><label for="address">Address</label></td>
+            <td><input type="text" id="address" name="address" required ngModel #address="ngModel"/></td>
+            <td><div *ngIf="address.touched && address.invalid" class="alert-message">This field is mandatory</div></td>
+        </tr>
+        <tr>
+            <td><label for="uname">Username</label></td>
+            <td><input type="text" id="uname" name="uname" required ngModel #uname="ngModel"/></td>
+            <td><div *ngIf="uname.touched && uname.invalid" class="alert-message">This field is mandatory</div></td>
+        </tr>
+        <tr>
+            <td><label for="createPassword">Create Password</label></td>
+            <td>
+                <input type="password" id="createpassword" name="createpassword" required ngModel #createPassword="ngModel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"/>
+                <div class="password-rules-container" *ngIf="createPassword.touched && createPassword.invalid">
+                <ul class="password-rules">
+                    <li *ngIf="!isUppercasePresent(createPassword.value)">At least one uppercase letter</li>
+                    <li *ngIf="!isLowercasePresent(createPassword.value)">At least one lowercase letter</li>
+                    <li *ngIf="!isDigitPresent(createPassword.value)">At least one digit</li>
+                    <li *ngIf="createPassword.value.length < 6">At least 6 characters</li>
+                    <li *ngIf="!isSpecialCharacterPresent(createPassword.value)">At least one special character (@$!%*?&)</li>
+                </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="confirmPassword">Confirm Password</label></td>
+            <td><input type="password" id="confirmpassword" name="confirmpassword" required ngModel #confirmPassword="ngModel" [pattern]="createPassword.value" /></td>
+            <td><div *ngIf="confirmPassword.touched && confirmPassword.invalid" class="alert-message">Passwords do not match</div></td>
+        </tr>
+        <tr>
+            <td><label for="dob">DOB</label></td>
+            <td><input type="date" id="dob" name="dob" required ngModel #dob="ngModel"/></td>
+            <td><div *ngIf="dob.touched && dob.invalid" class="alert-message">This field is mandatory</div></td>
+        </tr>
+        <br/>
+        <tr>
+            <td><button class="signin-button" type="submit">Sign In</button></td>
+        </tr>
+        <br/>
+    </table>
+</form>
+
+
